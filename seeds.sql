@@ -1,3 +1,6 @@
+\c employees
+
+
 INSERT INTO departments (deparment_id, deparment_name) VALUES
 ('Sales')
 , ('Engineering')

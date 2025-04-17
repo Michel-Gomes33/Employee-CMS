@@ -1,19 +1,24 @@
-DROP DATABASE IF EXISTS company;
-CREATE DATABASE company;
+DROP DATABASE IF EXISTS employees;
+CREATE DATABASE employees;
 
-CREATE TABLE departments (
-    department_id INT PRIMARY KEY AUTO_INCREMENT,
-    deparment_name VARCHAR(255) NOT NULL,
+\c employees;
+
+CREATE TABLE department (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(30) UNIQUE NOT NULL
 );
 
-CREATE TABLE employees(
-    employee_id IN PRIMARY KEY AUTO_INCREMENT,
-    first_name VARCHAR(255),
-    last_name VARCHAR(255).
-    title VARCHAR(255),
-    deparment_id INT,
-    salary DECIMAL(10,2) NOT NULL,
-    manager_id INT NULL,
-    FOREIGN KEY (department_id) REFERENCES departments(id),
-    FOREIGN KEY (manager_id) REFERENCES employees(id) ON DELETE SET NULL
+CREATE TABLE role (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(30) UNIQUE NOT NULL,
+    salary DECIMAL NOT NULL,
+    department_id INTEGER NOT NULL
 );
+
+CREATE TABLE employee (
+    id SERIAL PRIMARY KEY,
+    first_name VARCHAR(30) NOT NULL,
+    last_name VARCHAR(30) NOT NULL,
+    role_id INTEGER NOT NULL,
+    manager_id INTEGER
+)
