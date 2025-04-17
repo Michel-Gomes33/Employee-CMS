@@ -1,0 +1,31 @@
+{
+  "name": "employee-cms",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "npx tsc",
+    "start": "npm run build && node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Michel-Gomes33/Employee-CMS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Michel-Gomes33/Employee-CMS/issues"
+  },
+  "homepage": "https://github.com/Michel-Gomes33/Employee-CMS#readme",
+  "description": "",
+  "devDependencies": {
+    "@types/inquirer": "^9.0.7",
+    "@types/pg": "^8.11.11",
+    "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "inquirer": "^8.2.4",
+    "pg": "^8.14.0"
+  }
+}
